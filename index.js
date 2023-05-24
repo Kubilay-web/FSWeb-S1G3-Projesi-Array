@@ -40,9 +40,13 @@ Aşağıdakileri yapmak için aşağıdaki kopyalama işlevini kullanın:
 */
 
 
-function kopyala(/*kod buraya*/){
-  /*kod buraya*/
+function kopyala(value){
+ const array=[...value];
+ return value;
 }
+
+
+console.log("kopyala",kopyala(orijinalTatlar));
 
 
 /* Görev 2:
@@ -56,9 +60,17 @@ Bir dizinin tam olarak 25 çeşit olduğunu onaylayın. İşleviniz şunları ka
 */
 
 
-function dizi25Cesitmi(/*kod buraya*/){
-  /*kod buraya*/
+function dizi25Cesitmi(array){
+  if(array.length === 25){
+    return true;
+  }
+
+  else{
+    return false;
+  }
 }
+
+console.log("dizi25Cesitmi",dizi25Cesitmi(orijinalTatlar));
 
 
 /* Görev 3:
@@ -74,9 +86,12 @@ Aşağıdakileri yapmak için cesitEkle işlevini kullanın:
 */
 
 
-function cesitEkle(/*kod buraya*/){
-  /*kod buraya*/
+function cesitEkle(tatlarDizisi,yeniCesit){
+   tatlarDizisi.unshift(yeniCesit);
+   return tatlarDizisi;
 }
+
+console.log("cesitEkle",cesitEkle(orijinalTatlar,"Kakule"));
 
 
 /* Cörev 4:
@@ -92,9 +107,12 @@ Aşağıdakileri yapmak için sonCesitiKaldir işlevini kullanın:
 */
 
 
-function sonCesitiKaldir(/*kod buraya*/){
-  /*kod buraya*/
+function sonCesitiKaldir(tatlarDizisi){
+  tatlarDizisi.pop();
+  return tatlarDizisi;
 }
+
+console.log("sonCesitiKaldır",sonCesitiKaldir(orijinalTatlar));
 
 
 /* Görev 5:
@@ -108,9 +126,11 @@ Aşağıdakileri yapmak için aşağıdaki indekstekiCesitiGetir işlevini kulla
    Örneğin: indekstekiCesitiGetir(orijinalTatlar, 2) çalıştırılmasıyla, Kakule'in başarıyla eklendiği varsayarsak sonuç "Ceviz" olucaktır.
 */
 
-function indekstekiCesitiGetir(/*kod buraya*/){
-  /*kod buraya*/
+function indekstekiCesitiGetir(tatlarDizisi,match){
+   return tatlarDizisi[match];
 }
+
+console.log("indekstekiCesitiGetir",indekstekiCesitiGetir(orijinalTatlar,2));
 
 
 /* Görev 6:
@@ -128,9 +148,16 @@ Aşağıdakileri yapmak için ismeGoreCesitCikar işlevini kullanın:
   İPUCU: Bunun için .splice() kullanabilirsiniz.
 */
 
-function ismeGoreCesitCikar(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreCesitCikar(tatlarDizisi,cesitAdi){
+   const sirasi = tatlarDizisi.indexOf(cesitAdi);
+
+   console.log("sirasi",sirasi);
+   tatlarDizisi.splice(sirasi,1);
+   return tatlarDizisi;
+
 }
+
+console.log("ismeGoreCesitCIkar",ismeGoreCesitCikar(orijinalTatlar,"Tarçın"));
 
 
 /* Görev 7:
@@ -154,9 +181,19 @@ Aşağıdakileri yapmak için ismeGoreFiltrele işlevini kullanın:
 */
 
 
-function ismeGoreFiltrele(/*kod buraya*/){
-  /*kod buraya*/
+function ismeGoreFiltrele(tatlarDizisi,alerji){
+    const filtreTat = [];
+     for(var i=0;i<tatlarDizisi.length;i++){
+        if(tatlarDizisi[i].includes(alerji)){
+          filtreTat.push(tatlarDizisi[i]);
+        }
+     }
+
+     return filtreTat;
 }
+
+
+console.log("ismeGoreFiltrele",ismeGoreFiltrele(orijinalTatlar,"Çikolata"));
 
 
 
